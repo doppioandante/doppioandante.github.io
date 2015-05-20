@@ -51,3 +51,17 @@
     }
   }
 }
+
+.header-img {
+  display: inline-block;
+  width: auto;
+  background-color: #7A9C8A;
+  background-size: cover;
+  img {
+      height: auto;
+      width: 20%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}

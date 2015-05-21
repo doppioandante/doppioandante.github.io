@@ -78,7 +78,7 @@ int main()
   // stampo la lista ordinata
   for (int i=0; i < listLength; i++)
   {
-      printf("%d\n", list[i]);
+    printf("%d\n", list[i]);
   }
 
   free(list);

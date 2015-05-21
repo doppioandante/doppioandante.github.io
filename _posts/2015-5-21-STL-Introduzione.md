@@ -49,40 +49,40 @@ In C si potrebbe procedere così:
 
 int decreasing_cmp(const void* a, const void* b)
 {
-    return *(int*)b - *(int*)a;
+  return *(int*)b - *(int*)a;
 }
 
 int main()
 {
-    int listCapacity = 1;
-    int listLength = 0;
+  int listCapacity = 1;
+  int listLength = 0;
 
-    int* list = malloc(sizeof(*list) * listCapacity);
+  int* list = malloc(sizeof(*list) * listCapacity);
 
-    // leggo i numeri
-    while (scanf("%d", &list[listLength]) != EOF)
+  // leggo i numeri
+  while (scanf("%d", &list[listLength]) != EOF)
+  {
+    listLength++;
+
+    // Se è necessario, incremento la grandezza della lista
+    if (listLength == listCapacity)
     {
-        listLength++;
-
-        // Se è necessario, incremento la grandezza della lista
-        if (listLength == listCapacity)
-        {
-            listCapacity *= 2;
-            list = realloc(list, sizeof(*list) * listCapacity);
-        }
+      listCapacity *= 2;
+      list = realloc(list, sizeof(*list) * listCapacity);
     }
+  }
 
-    // ordino i numeri in ordine decrescente
-    qsort(list, listLength, sizeof(*list), decreasing_cmp);
+  // ordino i numeri in ordine decrescente
+  qsort(list, listLength, sizeof(*list), decreasing_cmp);
 
-    // stampo la lista ordinata
-    for (int i=0; i < listLength; i++)
-    {
-        printf("%d\n", list[i]);
-    }
+  // stampo la lista ordinata
+  for (int i=0; i < listLength; i++)
+  {
+      printf("%d\n", list[i]);
+  }
 
-    free(list);
-    return 0;
+  free(list);
+  return 0;
 }
 {% endhighlight %}
 
@@ -96,33 +96,33 @@ A confronto, lo stesso codice in C++:
 
 int main()
 {
-    using std::cin;
-    using std::cout;
+  using std::cin;
+  using std::cout;
 
-    std::vector<int> list;
+  std::vector<int> list;
 
-    int number;
-    while (cin >> number)
-    {
-        list.push_back(number);
-    }
+  int number;
+  while (cin >> number)
+  {
+    list.push_back(number);
+  }
 
-    std::sort(list.begin(), list.end(), std::greater<int>());
+  std::sort(list.begin(), list.end(), std::greater<int>());
 
-    // creo un iteratore che stampi su standard output i numeri
-    // separati da un newline
-    std::ostream_iterator<int> outputIterator(cout, "\n");
+  // creo un iteratore che stampi su standard output i numeri
+  // separati da un newline
+  std::ostream_iterator<int> outputIterator(cout, "\n");
 
-    // copio list su stdout attraverso outputIterator
-    std::copy(list.begin(), list.end(), outputIterator);
-    return 0;
+  // copio list su stdout attraverso outputIterator
+  std::copy(list.begin(), list.end(), outputIterator);
+  return 0;
 }
 {% endhighlight %}
 
 Non è necessario capire a fondo i due codici per ora, ma confrontandoli
 possiamo osservare le seguenti cose:
 
-* Non è necessario gestire il ridimensionamento di list, perché vector ci pensa
+* Non c'è bisogno di gestire il ridimensionamento di list, perché vector ci pensa
   al posto nostro; inoltre la memoria viene liberata all'uscita dallo scope
   grazie al distruttore e il programmatore non ha la possibilità di dimenticarsi
   un `free()`

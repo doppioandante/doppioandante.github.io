@@ -123,7 +123,7 @@ int main()
 Non è necessario capire a fondo i due codici per ora, ma confrontandoli
 possiamo osservare le seguenti cose:
 
-* Non c'è bisogno di gestire il ridimensionamento di list, perché vector ci pensa
+* Non c'è bisogno di gestire il ridimensionamento di `list`, perché vector ci pensa
   al posto nostro; inoltre la memoria viene liberata all'uscita dallo scope
   grazie al distruttore e il programmatore non ha la possibilità di dimenticarsi
   un `free()`

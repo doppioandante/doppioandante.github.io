@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Capire la Standard Template Library (Parte 1)
+title: Capire la Standard Template Library - Introduzione
 ---
 
 In questa serie di articoli vedremo abbastanza dettagliatamente come è

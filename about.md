@@ -14,5 +14,3 @@ foreign languages and contemporary Italian literature.
 
 This blog will be written in both English and Italian.
 
-Based on [type-theme](https://rohanchandra.github.io/project/type/)
-

@@ -5,7 +5,7 @@ url: "https://doppioandante.github.io" # the base hostname & protocol for your s
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: 何時?
+  title: Digital Candies
   gravatar: 9ba8d87f9d794def7d0ec1ca4a4d2eb9
   description: "Random thoughts about technology, science and everything" # used by search engines
 

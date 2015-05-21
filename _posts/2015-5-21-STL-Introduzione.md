@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Capire la Standard Template Library - Introduzione
+facebook_image: /img/stl.jpg
 ---
 
 In questa serie di articoli vedremo abbastanza dettagliatamente come è

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 I am Enrico Lumetti, currently undergraduate student at the university of

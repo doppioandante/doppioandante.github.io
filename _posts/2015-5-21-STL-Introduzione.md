@@ -4,6 +4,8 @@ title: Capire la Standard Template Library - Introduzione
 facebook_image: /img/stl.jpg
 ---
 
+> You can read this article in English [here](http://doppioandante.gitbooks.io/understanding-the-standard-template-library/content/en/)
+
 In questa serie di articoli vedremo abbastanza dettagliatamente come è
 strutturata la Standard Template Library (STL), dai princìpi di design fino
 all'implementazione vera e propria.

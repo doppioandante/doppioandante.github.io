@@ -85,8 +85,8 @@ _start () at empty.s:4
 We first load the debugging symbols using the `file` command, then we connect to our remote target.
 
 ##Crash course on GDB
-The TUI provided from GDB is good enough to debug simple (and complex) programs: press `Ctrl+x` and then `A` to active it: above your usual GDB command prompt, you will see the source being debugged.
-Issue this command to have a good view of the registers.
+The TUI provided by GDB is good enough to debug simple (and complex) programs: press `Ctrl+x` and then `A` to active it: above your usual GDB command prompt, you will see the source being debugged.
+Enter this command to have a good view of the registers.
 {% highlight text %}
 layout regs
 {% endhighlight %}

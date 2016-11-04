@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' type='text/css' href='./codehilite.css'>
+<link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+<body>
+<h2>Esercizi Prima Lezione</h2>
+<h3>Esercizio 1</h3>
+<p>Usa un google o l'interprete per capire l'utilizzo dell'operatore aritmetico <code>**</code>
+in Python. </p>
+<p><strong>Senza eseguirla</strong>, indovina il risultato della seguente espressione:</p>
+<div class="codehilite"><pre><span></span><span class="mi">3</span><span class="o">+</span><span class="mi">8</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+
+
+<p>Verifica la tua ipotesi. Cosa si può dire sulla precedenza di <code>**</code> rispetto agli altri operatori?</p>
+<p>Aggiungere un paio di parentesi affinché il risultato sia 15.</p>
+<h3>Esercizio 2</h3>
+<p>Scrivi un programma che chieda il nome con la funzione <code>raw_input</code> e che stampi un saluto.</p>
+<h3>Esercizio 3</h3>
+<p>Considera questo codice con due variabili di tipo diverso (stringa e intero):</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;24&quot;</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+
+
+<p>Che comportamento dovrebbe avere secondo te? Discuti e prova ad eseguirlo.</p>
+<p>Esegui poi questo codice che fa uso delle funzioni di conversione <code>int</code> e <code>str</code>.</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span>
+<span class="k">print</span> <span class="n">a</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+
+
+<p>Cosa scrive il programma? Perché l'operatore <code>+</code> si comporta in modo diverso?</p>
+<p>Modificare il primo snippet affinché venga scritto 27.</p>
+<h3>Esercizio 4</h3>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">())</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">())</span>
+<span class="o">...</span>
+<span class="k">print</span> <span class="n">a</span>
+<span class="k">print</span> <span class="n">b</span>
+</pre></div>
+
+
+<p>L'utente inserisce due numeri nel programma precedente e il risultato sono i due numeri scambiati.</p>
+<p>Completare i puntini affinché questo avvenga, utilizzando solo assegnamenti.</p>
+<p>[<strong>Opzionale</strong>: cercare su google un metodo per effettuare lo "swapping of variables" in una riga sola]</p>
+<h3>Esercizio 5</h3>
+<p>Scrivere un programma che chieda in input la misura dei due cateti di un triangolo rettangolo
+e scriva la misura dell'ipotenusa.</p>
+<p>Le variabili devono essere di tipo float. Usare la funzione di conversione <code>float</code> per
+convertire da stringa a numero.</p>
+<p>Nei sistemi di scrittura anglosassone il separatore dei decimali è il punto e non la virgola,
+quindi i numeri andranno inseriti col punto nel caso di cifre decimali.</p>
+<p><strong>Hint</strong>: come si esprime la radice quadrata usando l'elevamento a potenza?</p>
+<h3>Esercizio 6</h3>
+<p>Predire il valore della espressione booleana stampata:</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">w</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
+<span class="k">print</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span> <span class="o">!=</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">y</span>
+</pre></div>
+
+
+<p>Verificare il risultato. Qual è la precedenza di not rispetto a and e or? (Fare delle prove)</p>
+<p>Quando scrivete codice e non siete sicuri delle precedenze, aggiungete sempre le parentesi
+per migliorare la leggibilità.</p>
+<h3>Esercizio 7</h3>
+<p>L'operatore <code>%</code>, detto modulo o resto (in inglese <em>modulo</em> o <em>remainder</em>), è un operatore 
+che permette di calcolare il resto della divisione intera tra due numeri.</p>
+<p>Ad esempio, 44/6 fa 7 con resto 2, quindi 44 % 6 vale 2. (Verificarlo nell'interprete)</p>
+<p>Scrivere un programma che dica se un numero è pari o dispari utilizzando il remainder operator
+e l'<em>if statement</em>.</p>
+<h3>Esercizio 8</h3>
+<p>Scrivere un programma in cui si inserisce</p>
+<ol>
+<li>media dei voti</li>
+<li>numero dei voti</li>
+<li>media che si vuole raggiungere</li>
+</ol>
+<p>Scrivere il voto minimo da prendere nella prossima verifica se è possibile arrivare alla media desiderata,
+altrimenti scrivere "impossibile".</p>
+<h3>Esercizio 9</h3>
+<p>In un programma si inseriscono due numeri e poi viene stampato un menu testuale
+che chiede se li si vuole sommare (0) o moltiplicare (1).</p>
+<p>Il programma prende in input l'opzione scelta dall'utente (che scrive il numero corrispondente)
+e stampa il risultato dell'operazione.</p>
+<p>Scrivere il programma, aggiungendo la sottrazione e la divisione al menu.</p>
+<h3>Esercizio 10</h3>
+<p>Un conto in banca contiene un saldo di 400.35 euro.
+L'interesse è dell'1% annuo. Ogni anno inoltre si spendono 10 euro.</p>
+<p>Calcolare con un ciclo <em>while</em> il saldo presente dopo 10 anni.</p>
+<h3>Esercizio 11</h3>
+<p>Scrivere un programma che riceva in input un numero <em>n</em> intero positivo e stampi la
+somma dei primi <code>n</code> numeri naturali (1,2,3, ... fino ad n).</p>
+<p>[<em>Opzionale</em>: chiedere al proprio docente di matematica come trovare questa somma facendo pochi calcoli]</p>
+<h3>Esercizio 12</h3>
+<p>Scrivere un programma che dato un numero intero positivo in input, ne stampi le cifre in ordine inverso
+su righe separate.</p>
+<p><strong>Hint</strong>: utilizzare il remainder operator.</p>
+<h3>Esercizio 13</h3>
+<p>Risolvere il primo esercizio di <em>project Euler</em>:</p>
+<p><a href="http://projecteuler.net/problem=1">http://projecteuler.net/problem=1</a></p>
+<p>Vietato utilizzare google translate. È permesso l'utilizzo di un dizionario, ad esempio:
+<a href="http://wordreference.com/enit">http://wordreference.com/enit</a></p>
+<p><strong>Hint</strong>: è necessario controllare tutti i numeri?</p>
+<p><strong>Hint</strong>: il minimo comune multiplo di 3 e 5 è 15...</p>
+<p><strong>Opzionale (difficile?)</strong>: Usare l'algebra e la formula opzionale dell'esercizio 11
+per risolvere questo problema.</p>
+<p>Se ogni iterazione impiegasse 1 secondo, quanto tempo impiegherebbe la soluzione iterativa con
+i numeri fino a 1000000? E quella a formula chiusa?</p>
+<p>Tracciare un grafico del tempo in funzione del numero massimo per la soluzione iterativa e la soluzione
+a formula chiusa. Qual è più efficiente tra le due?</p>
+<h3>Esercizio 14 [difficile, per casa]</h3>
+<p>Dato un numero positivo in input, scrivere se è primo o meno.</p>
+<p><strong>Opzionale</strong>: chiedere al proprio docente di matematica come funziona il Crivello di Eratostene, oppure
+consultare la pagina di Wikipedia al riguardo.</p>
+<p>Senza la conoscenza degli array (tipo di dato <code>list</code> in Python) non è possibile scriverlo come programma.
+Vedremo le liste nella prossima lezione.</p>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' type='text/css' href='./codehilite.css'>
+<link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+<body>
+<h2>Quick Reference</h2>
+<h3>How to print values</h3>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="s2">&quot;hello world&quot;</span>
+<span class="n">hello</span> <span class="n">world</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="mi">3</span><span class="o">+</span><span class="mi">2</span>
+<span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">a</span><span class="o">+</span><span class="mi">2</span>
+<span class="mi">7</span>
+</pre></div>
+
+
+<h3>How to read values from the command prompt</h3>
+<div class="codehilite"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">()</span>
+<span class="k">print</span> <span class="s2">&quot;I&#39;ve got a message: &quot;</span> <span class="o">+</span> <span class="n">message</span>
+<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">())</span>
+<span class="k">print</span> <span class="n">number</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+
+
+<p>To read a decimal number, use <code>float</code> instead of <code>int</code> when converting.</p>
+<h3>Common arithmetic operations</h3>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="o">+</span><span class="mi">8</span>
+<span class="mi">18</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="o">-</span><span class="mi">30</span>
+<span class="o">-</span><span class="mi">20</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">34.2</span><span class="o">*</span><span class="mi">6</span>
+<span class="mf">205.20000000000002</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">5.0</span><span class="o">/</span><span class="mi">2</span>
+<span class="mf">2.5</span>
+</pre></div>
+
+
+<p>Note that division among integers is rounded to the left (try -5/2).</p>
+<p>At least one of the two operands must be of <code>float</code> type for the result to be in decimal representaiton.</p>
+<h3>Modifying variables</h3>
+<h3>Conditions (boolean expressions)</h3>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">3</span> <span class="c1"># Equality test</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> <span class="o">!=</span> <span class="mi">4</span> <span class="c1"># Inequality test</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">35.2</span> <span class="o">&lt;</span> <span class="mi">34</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">24</span> <span class="o">&gt;</span> <span class="mi">2</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">2</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="c1"># &quot;Greater or equal&quot;</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="c1"># Same as 7 &lt; a &lt; 12 in mathematical notation</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># Boolean values True and False are regular values and can be assigned to variables</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="n">b</span> <span class="c1"># Negation </span>
+<span class="bp">True</span>
+</pre></div>
+
+
+<h3>If statement</h3>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="s2">&quot;A is bigger than 2&quot;</span>
+<span class="o">...</span> <span class="k">else</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="s2">&quot;A is smaller than 2&quot;</span>
+<span class="o">...</span> 
+<span class="n">A</span> <span class="ow">is</span> <span class="n">bigger</span> <span class="n">than</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="s2">&quot;A is 1&quot;</span>
+<span class="o">...</span> <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="s2">&quot;A is 2&quot;</span>
+<span class="o">...</span> <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="s2">&quot;A is 3&quot;</span>
+<span class="o">...</span> <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="s2">&quot;A is 4&quot;</span>
+<span class="o">...</span> 
+<span class="n">A</span> <span class="ow">is</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="s2">&quot;some message&quot;</span>
+<span class="o">...</span> 
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>As you can see the <code>else</code> is not mandatory.</p>
+<h3>While loop: doing something n times</h3>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="s2">&quot;Doing something for the #&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; time&quot;</span>
+<span class="o">...</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="o">...</span> 
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#1 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#2 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#3 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#4 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#5 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#6 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#7 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#8 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#9 time</span>
+<span class="n">Doing</span> <span class="n">something</span> <span class="k">for</span> <span class="n">the</span> <span class="c1">#10 time</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h3>While loop: waiting for a specific condition</h3>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mustContinue</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">mustContinue</span><span class="p">:</span>
+<span class="o">...</span>    <span class="n">message</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">()</span>
+<span class="o">...</span>    <span class="k">if</span> <span class="n">message</span> <span class="o">==</span> <span class="s2">&quot;stop&quot;</span><span class="p">:</span>
+<span class="o">...</span>        <span class="n">mustContinue</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="o">...</span> 
+<span class="n">messaggio</span> <span class="n">a</span> <span class="n">caso</span>
+<span class="n">rickroll</span>
+<span class="n">stop</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h3>Common errors</h3>
+<h4>SyntaxError</h4>
+<p>Syntax errors happen when the python interpreter doesn't understand what you typed. Check your program carefully!</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="mi">3</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+     <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div>
+
+
+<p>Variables cannot start with a digit, so we get a syntax error.</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">5</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">5</span>
+           <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div>
+
+
+<p>Every statement like <code>if</code>, <code>while</code> and so on needs to be ended with <code>:</code>, otherwise we get an error.</p>
+<h4>NameError</h4>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">+</span><span class="mi">3</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;c&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+
+
+<p>The <code>c</code> variable was not assigned anything to previously. Initialize every variable before using it.</p>
+<h4>IndentationError</h4>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="n">a</span><span class="o">+</span><span class="mi">3</span>
+<span class="o">...</span>  <span class="k">print</span> <span class="n">a</span><span class="o">-</span><span class="mi">3</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">print</span> <span class="n">a</span><span class="o">-</span><span class="mi">3</span>
+            <span class="o">^</span>
+<span class="ne">IndentationError</span><span class="p">:</span> <span class="n">unindent</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">match</span> <span class="nb">any</span> <span class="n">outer</span> <span class="n">indentation</span> <span class="n">level</span>
+</pre></div>
+
+
+<p>Every syntactic block is indented and its istruction have the same alignment. In this case adding two spaces
+at the beginning of the third line would make the code correct.</p>
+<h3>Common pitfalls</h3>
+<h4>Infinite loops</h4>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+<span class="o">...</span>    <span class="k">print</span> <span class="n">i</span>
+</pre></div>
+
+
+<p>Don't forget to increment the index variable at the end of the loop, otherwise your program will never finish.</p>
+</body>
+</html>

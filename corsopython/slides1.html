@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Corso di Python</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					## Cos'è Python?
+					Python è un linguaggio di programmazione **interpretato**, a tipi **dinamici** e **imperativo**.
+
+					È stato creato da Guido Van Rossum nel 1991.
+				</section>
+				<section data-markdown>
+					## Punti di forza di Python
+					  * semplicità
+					  * *batteries included*
+					  * *open source*
+				</section>
+				<section>
+					<div data-markdown>## Chi usa Python?</div>
+					<ul>
+						<li class="fragment">Google</li>
+						<li class="fragment">Dropbox</li>
+						<li class="fragment">Scienziati: NumPy, SciPy, SageMath</li>
+						<li class="fragment">Big Data: Pandas, NumPy</li>
+						<li class="fragment">Machine Learning: Tensorflow</li>
+						<li class="fragment">Altri...</li>
+					</ul>
+				</section>
+				<section data-markdown>
+					## Come usare Python?
+					Scaricare l'installer da [https://www.python.org/downloads/](https://www.python.org/downloads/)
+				</section>
+				<section>
+					<div data-markdown>## Come usare Python?</div>
+					<img src="img/idle.png">
+				</section>
+				<section data-markdown>
+					# Concetti di base
+				</section>
+				<section data-markdown>
+					## Variabili
+					Le variabili vengono create usando l'operazione di **assegnamento**
+					```python
+					>>> a = 3
+					>>> 
+					```
+					Ogni variabile ha un nome, in genere descrittivo del suo scopo.
+
+					Il nome è composto di lettere, underscore e cifre, ma non può cominciare con una cifra.
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+					## Variabili
+					Tutte le variabili hanno un **tipo** che ne detta le caratteristiche.
+
+					Per ora vedremo il tipo `int` (numero intero), `str` (testo),`float` (numeri razionali) e `bool` (vero/falso).
+					```python
+					>>> a = 3
+					>>> type(a)
+					<type 'int'>
+					>>> type(-30)
+					<type 'int'>
+					>>> b = "Nel bel mezzo di cammin di nostra vita..."
+					>>> type(b)
+					<type 'str'>
+					>>> c = 3.5
+					>>> type(c)
+					<type 'float'>
+					```
+					</script>
+				</section>
+				<section data-markdown><script type="text/template">
+					## Variabili
+					Possiamo mostrare il contenuto di una variabile usando l'istruzione `print`
+					```python
+					>>> a = 23
+					>>> print a
+					23
+					>>>
+					```
+					**Attenzione**: In Python 3, print diventa una funzione e si usa diversamente:
+					```python
+					>>> print(a)
+					23
+					>>>
+					```
+				</script></section>
+				<section data-markdown><script type="text/template">
+					## Differenza tra stampare e valutare
+				</script></section>
+				<section data-markdown><script type="text/template">
+					## Operazioni di base
+					Possiamo usare Python per fare calcoli aritmetici più o meno complessi
+					
+					```python
+					>>> a = 23
+					>>> a + 1
+					24
+					>>> 23 + 1
+					24
+					>>> b = 30 - 10 + a
+					>>> b
+					43
+					>>> c = 7/2
+					>>> print c
+					3
+					>>> c = 7.0/2
+					>>> print c
+					3.5
+					>>> messaggi_concatenati = "messaggio1 e " + "messaggio due"
+					>>> print messaggi_concatenati
+					messaggio1 e messaggio due
+					```
+				</script></section>
+				<section data-markdown><script type="text/template">
+					## Condizioni
+					Oltre alle espressioni aritmetiche l'interprete può valutare anche espressioni logiche:
+
+					```python
+					>>> a = 10
+					>>> a > 2
+					True
+					>>> a < 5
+					False
+					>>> a*2 == 20
+					True
+					>>> a != 0
+					True
+					```
+				</script></section>
+				<section data-markdown><script type="text/template">
+					## Condizioni
+					Si possono formare espressioni logiche più complesse usando `and`, `or` e `not`:
+
+					```python
+					>>> a != 0
+					True
+					>>> a > 2 and a < 12
+					True
+					>>> a != 0 or a != 1
+					True
+					>>> not (a != 0)
+					False
+					```
+				</script></section>
+				<section data-markdown><script type="text/template">
+					## Leggere del testo inserito dall'utente
+					  * Funzione `raw_input` in Python 2
+					  * È stata rinominata `input` in Python 3
+				</script></section>
+				<section data-markdown><script type="text/template">
+					## Effettuare delle scelte
+					Il programma può comportarsi in modi diversi in base all'input
+					```python
+					testo = raw_input("Qual è la tua età?")
+					eta = int(testo)
+					if eta >= 18:
+						print "Inferno, canto XXVIII"
+					else:
+						print "Non puoi vedere questo contenuto"
+						print "Torna più tardi"
+					```
+					**IMPORTANTE**: rispettare il rientro del testo (**indentation**)
+				</script></section>
+				<section data-markdown><script type="text/template">
+					## Ripetere dei comandi
+					La seconda istruzione fondamentale oltre all'`if` (conditional statement) è il `while` (loop statement).
+
+					Si traduce in italiano con *finché*, sebbene purtroppo molti libri italiani lo riportino come *mentre*.
+
+					Si usa comunemente "ciclo while" per indicarlo.
+
+					```python
+					i = 0
+					while i < 100:
+						print "Ping"
+						print "Pong"
+
+						i = i + 1 # incremento di i, detta variabile indice (index)
+					```
+				</script></section>
+				<section data-markdown><script type="text/template">
+					## Combinare while e if...
+				</script></section>
+				<section data-markdown>
+					## Ulteriori risorse
+					  * [Tutorial ufficiale(ENG)](https://docs.python.org/3/tutorial/index.html)
+					  * [Vecchia guida per la versione 2(IT)](http://www.python.it/doc/Howtothink/Howtothink-html-it/index.htm)
+					  * [Tutorial interattivo di Code Academy(ENG)](https://www.codecademy.com/learn/python)
+					  * Google, stackoverflow, insegnanti, sperimentare
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

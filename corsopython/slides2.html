@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Corso di Python</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+				## Riepilogo
+			        </section>
+			        <section data-markdown>
+			        ## Funzioni
+			        Abbiamo già visto alcune funzioni:
+			        *	`input`
+			        *	`print`
+			        *	Funzioni di conversione `int`, `float`, `str`
+			        *	`type`
+				</section>
+                                <section data-markdown><script type="text/template">
+				## Come usare le funzioni
+
+				fun(parametro1, parametro2, ..., parametroN)
+
+				*	Al posto di *fun* il nome della funzione che si vuole chiamare (function call)
+				*	I parametri (o **argomenti**) vanno tra le parentesi, separati da una virgola. Possono essere variabili, espressioni, stringhe...
+				</script></section>
+                                <section data-markdown><script type="text/template">
+				## Come facciamo a sapere quali funzioni usare?
+
+				*	Funzioni *built-in*: ad esempio print, funzioni di conversione e altre
+				*	Funzioni provenienti dalla standard library
+				*	Funzioni provenienti da moduli esterni installati dall'utente
+				*	Funzioni create da noi
+				</script></section>
+                                <section data-markdown><script type="text/template">
+				## Quali sono le funzioni builtin?
+
+				[Link alla documentazione](https://docs.python.org/3/library/functions.html)
+
+				Alcune importanti: `len`, `list`, `min`, `max`, `help`, `dir`...
+				</script></section>
+                                <section data-markdown><script type="text/template">
+				## Usare funzioni esterne
+
+				Bisogna prima **importare** il modulo che contiene la funzione.
+				Esempio con modulo `math`, presente nella standard library
+				```python
+				>>> import math
+				>>> type(math)
+				>>> type(math)
+				<class 'module'>
+				```
+				Per ottenere brevemente le funzioni presenti nel modulo si usa la funzione builtin `dir`
+				```python
+				>>> dir(math)
+				['__doc__', '__loader__', '__name__', '__package__', '__spec__',
+				 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh',
+				'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', '
+				erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', '
+				frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', '
+				isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', '
+				log1p', 'log2', 'modf', 'nan', 'pi', 'pow', 'radians', '
+				sin', 'sinh', 'sqrt', 'tan', 'tanh', 'trunc']
+				>>>
+				```
+				</script></section>
+                                <section data-markdown><script type="text/template">
+				Per informazioni dettagliate bisogna consultare il reference ufficiale, oppure usare la funzione `help`.
+				</script></section>
+                                <section data-markdown><script type="text/template">
+                                ##Chiamare una funzione
+                                ```python
+                                >>> import math
+                                >>> math.sqrt(9)
+                                3.0
+                                ```
+                                </script></section>
+                                <section data-markdown><script type="text/template">
+                                ##Creare una funzione
+                                ```python
+                                >>> def somma(a,b):
+                                ...     return a + b
+                                ...
+                                >>> type(somma)
+                                <class 'function'>
+                                >>> somma(24, 25)
+                                49
+                                ```
+                                **def** è un'abbreviazione di *define*
+
+                                L'espressione indicata dopo `return` sarà il risultato effettivo della funzione quando viene valutata.
+                                </script></section>
+                                <section data-markdown><script type="text/template">
+                                Un esempio più interessante
+                                ```python
+                                >>> import math
+                                >>> def ipotenusa(cateto1, cateto2):
+                                ...     quadrato_ipotenusa = cateto1**2 + cateto2**2
+                                ...     return math.sqrt(quadrato_ipotenusa)
+                                ...
+                                >>> ipotenusa(3,4)
+                                5.0
+                                ```
+                                </script></section>
+                                <section data-markdown><script type="text/template">
+                                ## Creare un modulo
+                                *	Serve creare un file con estensione `.py` che contenga le funzioni del modulo
+                                *	Nella stessa cartella, gli altri file `.py` possono importare quel modulo
+                                </script></section>
+                                <section data-markdown><script type="text/template">
+                                Esempio:
+
+                                b.py
+                                ```python
+                                def riporta_errore(messaggio):
+                                    print("Si è verificato il seguente errore: " + messaggio)
+                                ```
+
+                                a.py
+                                ```
+                                import b
+                                b.riporta_errore("memoria insufficiente")
+                                ```
+                                </script></section>
+                                <section data-markdown><script type="text/template">
+                                La funzione `riporta_errore` non usa `return`...
+                                </script></section>
+                                <section data-markdown><script type="text/template">
+                                Le funzioni che non hanno nessun valore utile da riportare, ma che eseguono comandi, ritornano implicitamente
+                                il valore `None`, un altro tipo primitivo in Python:
+                                ```
+                                >>> risultato = b.riporta_errore("aaa")
+                                Si è verificato il seguente errore: aaa
+                                >>> print(risultato)
+                                None
+                                >>> type(risultato)
+                                <class 'NoneType'>
+                                >>> risultato
+                                >>>
+                                ```
+                                L'interprete interattivo non valuta `None`, ma riusciamo a mostrarlo con `print`.
+                                </script></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

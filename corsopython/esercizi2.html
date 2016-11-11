@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' type='text/css' href='./codehilite.css'>
+<link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+<body>
+<h2>Esercizi Seconda Lezione</h2>
+<h3>Esercizio 1</h3>
+<p>Il seguente codice chiede tre numeri in input e ne calcola la radice quadrata</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">n1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il primo numero: &quot;</span><span class="p">))</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il secondo numero: &quot;</span><span class="p">))</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il terzo numero: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">n1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Errore: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; è un numero negativo&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n1</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">n2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Errore: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; è un numero negativo&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n2</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">n3</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Errore: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; è un numero negativo&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n3</span><span class="p">))</span>
+</pre></div>
+
+
+<p>Scrivere una funzione, di nome stampa_radice_quadrata con un parametro
+che racchiuda un blocco if/else, ma che al posto di n1,n2, ecc. usi il parametro ricevuto.</p>
+<p>Riscrivere il codice sopra usando questa funzione dove opportuno.</p>
+<p>Scrivere poi una funzione stampa_errore, sempre di un parametro, che stampi il messaggio di errore
+nel caso il parametro ricevuto sia un numero negativo.</p>
+<p>Riscrivere il codice che usa stampa_radice_quadrata aggiungendo anche stampa_errore.</p>
+<p><strong>Domanda</strong>: si vuole modificare il codice affinché calcoli la radice quarta (che si ottiene usando due volte la radice quadrata),
+inoltre si cambia il messaggio di errore a "Impossibile calcolare la radice quarta di" + str(n).</p>
+<p>Quante righe vengono modificate nel codice che usa le funzioni? Quante invece ne servirebbero nel codice originale?</p>
+<h3>Esercizio 2</h3>
+<p>Il computer esegue istruzioni in modo deterministico: date certe condizioni di partenza, il risultato è sempre lo stesso.</p>
+<p>Per introdurre casualità nel programma si utilizza spesso un cosiddetto random number generator (generatore di numeri casuali).</p>
+<p>Un RNG in genere ottiene casualità da eventi imprevedibili nel computer (temperatura di un componente, tempo passato dall'inizio del programma,
+generatori hardware di rumore bianco, ...) e poi continua a generare eventuali nuovi numeri usando tecniche matematiche deterministiche
+(linear congruential generator, Mersenne-Twister, ...).</p>
+<p>In python il modulo <em>random</em>, presente nella libreria standard, offre funzioni per generare numeri casuali.</p>
+<p>Usare <code>help</code> o internet per capire il funzionamento della funzione <code>random.randint</code>, e usarla nell'interprete per simulare il lancio di
+un dado a 6 facce.</p>
+<h3>Esercizio 3</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="n">g</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Senza eseguirlo, cosa stampa il programma qui sopra?</p>
+<p>Si modifica g() nel seguente modo:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Cosa dovrebbe succedere? Esegui il programma modificato. (Usare Ctrl+C per terminare il programma nell'interprete)</p>
+<h3>Esercizio 4</h3>
+<p>Si hanno tre palline di colori diversi, e ci si domanda in quanti modi possono essere messe in fila.</p>
+<p>Si trova facilmente che la prima pallina si può scegliere in 3 modi, la seconda in 2 e l'ultima è quella esclusa, quindi ci sono 3*2*1 = 6 modi in totale.</p>
+<p>In generale, si dimostra che con n palline ci sarebbero n*(n-1)*(n-2)*...*1 modi di disporle.</p>
+<p>L'espressione riportata sopra si chiama fattoriale di n e si indica in matematica con n! (punto esclamativo dopo il numero di cui si vuole fare il fattoriale).</p>
+<p>Scrivere un funzione che calcoli il fattoriale di n, usando un while e <code>return</code>.</p>
+<p>I cicli iterativi sono un concetto fondamentale nella programmazione imperativa, e hanno le loro radici nel modo di concepire il calcolatore creato
+da Alan Turing, che prima ancora dell'invenzione del computer ne aveva descritto le proprietà attraverso il modello matematico ora detto <strong>Turing machine</strong>.</p>
+<p>Diverso, ma equivalente al modello di Turing machine, c'è il cosidetto <strong>lambda calcolo</strong>, inventato da Alonzo Church in contemporanea a Turing.
+Nel lambda calcolo non c'è l'iterazione, ma solo funzioni e certe regole che ne determinano l'utilizzo. I linguaggi basati principalmente sulle funzioni
+si chiamano linguaggio funzionali, in contrasto con i linguaggi imperativi. Alcuni famosi: Lisp (anni 60), Haskell (moderno).</p>
+<p>Python è un linguaggio imperativo, tuttavia si può trovare qualche aspetto funzionale: uno di questi è la ricorsione, tecnica con cui una funzione
+chiama se stessa per ottenere lo stesso risultato di un ciclo. Ad esempio, questa funzione calcola il fattoriale usando la ricorsione:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+<span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Si potrebbe in modo simile riscrivere il codice dell'esercizio 11 della prima settimana.</p>
+<h3>Esercizio 5</h3>
+<p>Si consideri il seguente codice:</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;albero&quot;</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;mela&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">()</span>
+<span class="n">g</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Cosa dovrebbe stampare? Indovina e poi prova ad eseguirlo.</p>
+<p>Il risultato è abbastanza sorprendente.</p>
+<p>La funzione g, che non ha nessuna variabile <em>a</em> definita al suo interno, cerca questa variabile nel contesto globale del programma (global scope).
+Trova la variabile a con il valore di "albero" e utilizza quella, una variabile nel contesto globale si dice variabile globale, ed è visibile a tutte le funzioni.</p>
+<p>La funzione f invece ridefinisce la variabile a, però questa modifica non si propaga al contesto globale (infatti la chiamata successiva a g() stampa "albero").
+Infatti ogni funzione ha un proprio contesto locale, e le variabili definite all'interno della funzione non sono visibili esternamente.</p>
+<p>Se una variabile definita nel contesto locale ha lo stesso nome di una variabile del contesto globale si ha il cosiddetto <code>aliasing</code>.</p>
+<p>Per ottenere il comportamento opposto, provare a inserire l'istruzione <code>global a</code> nella prima riga della funzione f.</p>
+<h3>Esercizio 6</h3>
+<p>Scarica il modulo <a href="./easydraw.py">easydraw</a> e salvalo sul computer.
+Aprirlo con IDLE ed eseguirlo, dopodiché sarà possibile fare <code>import easydraw</code> dall'interprete.
+Usa <code>help</code> per esaminare le funzioni del modulo e la loro documentazione.</p>
+<p>I colori sono stringhe che possono contenere o i nomi dei colori più comuni (red, blue, green, ecc..)
+oppure la codifica RGB (red-green-blue) esadecimale del colore (ad esempio "#FF0000" è il rosso, "#FFFFFF" il bianco, "#000000" il nero).</p>
+<p>Si può usare un color picker online per ottenere il colore che si vuole in rappresentazione RGB esadecimale.</p>
+<p>Usare il modulo per fare dei disegni. Un esempio:</p>
+<p><img alt="&quot;scacchiera rossa e blu&quot;" src="img/scacchiera.png" /></p>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' type='text/css' href='./codehilite.css'>
+<link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+<body>
+<h2>Esercizi Seconda Lezione</h2>
+<h3>Esercizio 1</h3>
+<p>Un punto (x,y) viene disegnato nel piano cartesiano. Se si traccia una freccia orientata dall'orogine al punto individuato
+si ottiene un oggetto matematico chiamato vettore.</p>
+<p>Si può intuitivamente definire la lunghezza del vettore come la lunghezza della freccia, che si trova graficamente attraverso il teorema di
+Pitagora ed è uguale alla radice del quadrato delle componenti, sqrt(x²+y²).</p>
+<p>Analogamente si dimostra che in uno spazio tridimensionale per un vettore (x,y,z) vale una formula analoga: sqrt(x² + y² + z²)</p>
+<p><img alt="teorema di Pitagora in tre dimensioni" src="img/pythagoras3.gif" /></p>
+<p>Si può generalizzare questo ragionamento a spazi a più di tre dimensioni (o addirittura a infinite dimensioni). Nel caso di un vettore a N componenti
+la lunghezza è definita come:</p>
+<p><img alt="Formula per la lunghezza di un vettore" src="img/vectorlength.gif" /></p>
+<p>Ossia la radice quadrato della somma dei quadrati delle componenti.</p>
+<p>Scrivere una funzione <code>vector_length</code> che prende come parametro un array e ne calcola la lunghezza.</p>
+<h3>Esercizio 2</h3>
+<p>Usando le funzioni builtin <code>chr</code>, <code>ord</code> e la funzione <code>random.shuffle</code> del modulo <code>random</code> si genera una permutazione casuale dell'alfabeto:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">random</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">alphabet</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">):</span>
+<span class="o">...</span>     <span class="n">alphabet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="o">...</span>     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">alphabet</span>
+<span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">alphabet</span>
+<span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>Un messaggio viene codificato scambiandone le lettere con quelle corrispondenti nell'alfabeto casuale.
+Ad esempio 'ciao' viene codificato come 'otmx'</p>
+<p>Scaricare il file di testo <a href="segreto.txt">segreto.txt</a> e completare il seguente programma che lo decodifica</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">decodifica</span><span class="p">(</span><span class="n">messaggio</span><span class="p">,</span> <span class="n">alfabeto</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;segreto.txt&#39;</span><span class="p">)</span>
+<span class="n">testo_criptato</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">alfabeto_casuale</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">decodifica</span><span class="p">(</span><span class="n">testo_criptato</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">alfabeto_casuale</span><span class="p">))</span>
+</pre></div>
+
+
+<h3>Esercizio 3</h3>
+<p>La distanza tra due punti è definita come la lunghezza del vettore differenza. La differenza tra vettori si fa sottraendo componente per componente:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">vector_difference</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+    <span class="n">v3</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+        <span class="n">v3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">v2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">v3</span>
+</pre></div>
+
+
+<p>Usando la funzione definita sopra (magari dopo averla capita..), scrivere una funzione <code>distance</code> che ritorna la distanza tra due punti.</p>
+<p>Curiosità: usando funzionalità più avanzate di Python (list comprehension, generators), si possono scrivere funzioni simili semplicemente così</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">vector_length</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">v</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+<span class="k">def</span> <span class="nf">vector_difference</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)]</span>
+</pre></div>
+</body>
+</html>

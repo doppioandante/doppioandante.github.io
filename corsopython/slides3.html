@@ -146,6 +146,7 @@
                                     while i < len(lista):
                                         if lista[i] == elemento:
                                             return True # return termina la funzione e quindi anche il ciclo
+                                        i += 1
 
                                     # se il ciclo è terminato senza essere uscito dalla funzione, allora l'elemento non è presente
                                     return False
@@ -180,13 +181,13 @@
                                 []
                                 >>> a[0:len(a)]
                                 [21, 45, 231, 45, 2, -34, 1, 0, 0, 2]
-                                >>> a[:] # Scrittura equivalente ad a[0:len(a)], si usa spesso per clonare gli array
+                                >>> a[:] # Scrittura equivalente ad a[0:len(a)], si usa spesso per clonare le liste
                                 [21, 45, 231, 45, 2, -34, 1, 0, 0, 2]
                                 >>>
                                 ```
                                 </script></section>
                                 <section data-markdown><script type="text/template">
-                                ## Attraversamento di array:
+                                ## Attraversamento di liste:
                                 ```python
                                 a = [...omesso...]
                                 i = 0
@@ -209,7 +210,7 @@
                                </script></section>
                                <section data-markdown><script type="text/template">
                                ## Stringhe
-                               Le stringhe possono essere usate come gli array, ma non sono modificabili.
+                               Le stringhe possono essere usate come le liste, ma non sono modificabili.
                                ```
                                >>> s = "corso di python"
                                >>> s[9:]

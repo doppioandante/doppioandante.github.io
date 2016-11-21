@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' type='text/css' href='./codehilite.css'>
+<link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+<body>
+<h2>Soluzioni prima lezione</h2>
+<h3>Esercizio 1</h3>
+<p><code>**</code> è l'elevamento a potenza.</p>
+<div class="codehilite"><pre><span></span>(3+8/2**2)*3 = 15
+</pre></div>
+
+
+<h3>Esercizio 2</h3>
+<div class="codehilite"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il tuo nome: &quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ciao &quot;</span> <span class="o">+</span> <span class="n">nome</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<h3>Esercizio 3</h3>
+<p>Il primo codice dà errore perché non è permesso di sommare stringhe e interi; usando le funzioni di conversione si può ottenere così 27 dal codice:</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;24&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+
+
+<h3>Esercizio 4</h3>
+<p>Serve creare una nuova variabile per effettuare lo scambio:</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tmp</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Riflettere sul perché la soluzione "intuitiva", riportata sotto, non può funzionare:</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+
+<p>In python si possono scambiare facilmente due variabili con una forma di assegnamento speciale, chiamato unpacking assignment:</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</pre></div>
+
+
+<h3>Esercizio 5</h3>
+<div class="codehilite"><pre><span></span><span class="n">cateto1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il primo cateto: &quot;</span><span class="p">))</span>
+<span class="n">cateto2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il secondo cateto: &quot;</span><span class="p">))</span>
+
+<span class="n">ipotenusa</span> <span class="o">=</span> <span class="p">(</span><span class="n">cateto1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">cateto2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;L&#39;ipotenusa vale: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ipotenusa</span><span class="p">))</span>
+</pre></div>
+
+
+<h3>Esercizio 7</h3>
+<p>Si sfrutta il fatto che la divisbilità per 2 è equivalente ad avere resto nullo quando si divide per 2.</p>
+<div class="codehilite"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci un numero: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; è pari&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; è dispari&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<h3>Eserczizio 8</h3>
+<div class="codehilite"><pre><span></span><span class="n">media</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci la tua media attuale: &quot;</span><span class="p">))</span>
+<span class="n">n_voti</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il numero di voti ricevuti: &quot;</span><span class="p">))</span>
+<span class="n">goal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci la media che vuoi raggiungere: &quot;</span><span class="p">))</span>
+
+<span class="n">voto_da_prendere</span> <span class="o">=</span> <span class="n">goal</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_voti</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">media</span> <span class="o">*</span> <span class="n">n_voti</span>
+<span class="k">if</span> <span class="n">voto_da_prendere</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">voto_da_prendere</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Devi prendere: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">voto_da_prendere</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Impossibile&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<h3>Esercizio 9</h3>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Menu--------------------&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;0) Somma&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;1) Prodotto&quot;</span><span class="p">)</span>
+
+<span class="n">opzione</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci l&#39;operazione desiderata: &quot;</span><span class="p">))</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il primo numero: &quot;</span><span class="p">))</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il secondo numero: &quot;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;----------------------&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Risultato: &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">opzione</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">opzione</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n1</span> <span class="o">*</span> <span class="n">n2</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Divisione e sottrazione si aggiungono in modo analogo. 
+Per mantenere il programma attivo, si usa un while loop.</p>
+<div class="codehilite"><pre><span></span><span class="n">stop</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">stop</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Menu--------------------&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;0) Somma&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;1) Prodotto&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;9) Termina&quot;</span><span class="p">)</span>
+
+    <span class="n">opzione</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci l&#39;operazione desiderata: &quot;</span><span class="p">))</span>
+    <span class="n">n1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il primo numero: &quot;</span><span class="p">))</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci il secondo numero: &quot;</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;----------------------&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Risultato: &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">opzione</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">opzione</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">n1</span> <span class="o">*</span> <span class="n">n2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">opzione</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="n">stop</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+
+
+<h3>Esercizio 10</h3>
+<div class="codehilite"><pre><span></span><span class="n">saldo</span> <span class="o">=</span> <span class="mf">400.35</span>
+
+<span class="n">anno</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">anno</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">saldo</span> <span class="o">=</span> <span class="n">saldo</span><span class="o">*</span><span class="mf">0.01</span> <span class="o">-</span> <span class="mi">10</span>
+    <span class="n">anno</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+
+<h3>Esercizio 11</h3>
+<div class="codehilite"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Inserisci n: &quot;</span><span class="p">))</span>
+<span class="n">risultato</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">risultato</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;La somma dei primi &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; numeri è: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">risultato</span><span class="p">))</span>
+</pre></div>
+
+
+<h3>Esercizio 12</h3>
+<p>Se si calcola il resto della divisione per 10 di un numero si ottiene la sua ultima cifra: ad esempio 423 / 10 è 42 con resto di 3. Quindi 423 % 10 = 3.</p>
+<p>Per ottenere le altre cifre si può dividere il numero per 10 e ripetere l'operazione finché non si ottiene 0 nell'ultima divisone.</p>
+<p>Purtroppo 423/10 in Python fa 42.3 e non possiamo più utilizzare il remainder operator su numeri decimali.</p>
+<p>Per aggirare il problema ci sono due modi:</p>
+<ul>
+<li>Troncare il risultato e renderlo intero, usando la funzione int()</li>
+<li>Usare l'operatore // che effettua la divisione intera.</li>
+</ul>
+<p>Usando il primo:</p>
+<div class="codehilite"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;inserisci un numero: &quot;</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+
+<p>La funzione di conversione <code>str</code>, nel caso degli interi, si basa su un metodo analogo per effettuare la conversione:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">simple_str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">sign</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="n">n</span>
+
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">result</span>
+        <span class="n">n</span> <span class="o">//=</span> <span class="mi">10</span>
+
+    <span class="k">return</span> <span class="n">sign</span> <span class="o">+</span> <span class="n">result</span>
+</pre></div>
+
+
+<h2>Esercizio 13</h2>
+<p>Soluzione 1:</p>
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Soluzione 2:</p>
+<div class="codehilite"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># calcolo tutto i multipli di tre e li aggiungo</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1000</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="mi">3</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1"># stessa cosa per i multipli di cinque</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1000</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="mi">5</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># I multipli sia di 3 che di 5 sono stati contati due volte e vanno tolti</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1000</span><span class="o">/</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">-=</span> <span class="n">i</span><span class="o">*</span><span class="mi">15</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+
+
+<h2>Esercizio 14</h2>
+<p>Soluzione molto poco efficiente: si testa la divisibilità per tutti i numeri maggiori di 1 e minori del numero considerato.</p>
+<div class="codehilite"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Inserisci un numero: &#39;</span><span class="p">))</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">prime</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">prime</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">prime</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">prime</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Primo&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Non primo&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Si può fare un piccolo miglioramento: quando la variabile <code>prime</code> diventa <code>False</code>, non è più necessario continuare
+il ciclo. Si può quindi modificare così la condizione del while:</p>
+<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">prime</span><span class="p">:</span>
+</pre></div>
+
+
+<p>Un secondo miglioramento è dato dal fatto che se un numero x non divide n, allora nemmeno il numero n/x (se intero) può dividere n</p>
+<p>Per fare un esempio, 100 è divisibile per 2 e 5, quindi è inutile controllare 100/2 = 50 e 100/5=2. Una volta sorpassato il 10, 100/i sarà minore di 10
+quindi sarà come controllare di nuovo la divisbilità per i numeri prima del 10.</p>
+<p>Ragionando e facendo un po' di prove ci si rende conto che basta controllare i divisori fino a sqrt(n).</p>
+<div class="codehilite"><pre><span></span><span class="n">n_sqrt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># salviamo il risultato per non doverlo ricalcolare ad ogni ciclo</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n_sqrt</span> <span class="ow">and</span> <span class="n">prime</span><span class="p">:</span>
+    <span class="c1"># ...</span>
+</pre></div>
+
+
+<p>C'è un &lt;= e non un &lt; perché altrimenti i quadrati di numeri primi non verrebbero identificati correttamente (ad esempio 7² = 49).</p>
+</body>
+</html>

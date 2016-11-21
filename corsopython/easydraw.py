@@ -5,7 +5,7 @@ __all__ = ["create_window", "draw_line", "draw_rectangle", "draw_pixel", "clear"
 _cv = None
 
 
-def create_window(width, height):
+def create_window(width, height, title = "easydraw"):
     """
     Create a window with specified dimensions.
     Must be called at the beginning, only one time.
@@ -16,6 +16,8 @@ def create_window(width, height):
         return
     
     master = tkinter.Tk()
+    master.resizable(0, 0)
+    master.title(title)
     _cv = tkinter.Canvas(master, width=width, height=height)
     _cv.pack()
 

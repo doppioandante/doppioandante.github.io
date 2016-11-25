@@ -20,11 +20,14 @@ class Impiccato(tk.Tk):
         self.canvas.pack()
 
         self.new_game_button = tk.Button(frame_left,
-                             text="Nuovo gioco",
-                             command=self.new_game)
+                                         text="Nuovo gioco",
+                                         command=self.new_game)
         self.new_game_button.pack()
 
         self.letter_entry = tk.Entry(frame_left)
+        # bind collega l'evento specificato (in questo caso <Return>, pressione del tasto invio),
+        # al metodo (o funzione) che viene passato come secondo parametro
+        # Senza questa riga non succederebbe nulla
         self.letter_entry.bind("<Return>", self.on_enter_pressed)
         self.letter_entry.pack()
 
@@ -49,6 +52,8 @@ class Impiccato(tk.Tk):
     def on_enter_pressed(self, event):
         if self.ended:
             # se il gioco è terminato termino subito
+            # Un return senza nessuna espressione come risultato
+            # è equivalente a return None
             return
 
         text = self.letter_entry.get()

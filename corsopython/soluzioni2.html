@@ -13,7 +13,7 @@
 La scelta è dettata dal fatto che quelle quattro righe si ripetono pressoché identiche per tre volte. Se si volesse modificare una di queste righe,
 andrebbe modificata 3 volte.</p>
 <p>Le funzioni possono essere viste come un modo di aderire al principio 'DRY', che sta per Don't Repeat Yourself.</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">stampa_radice_quadrata</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -33,20 +33,20 @@ andrebbe modificata 3 volte.</p>
 
 <h3>Esercizio 2</h3>
 <p>Innanzitutto bisogna importare il modulo che ci interessa per poterlo utilizzare.
-In questo caso, o nell'interprete o nel file python, fa scritto</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+In questo caso, o nell'interprete o nel file python, va scritto</p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">random</span>
 </pre></div>
 
 
 <p>Si può leggere la documentazione ufficiale per capire il funzionamento di <code>randint</code>:
 <a href="https://docs.python.org/2/library/random.html#random.randint">https://docs.python.org/3/library/random.html#random.randint</a></p>
 <p>Un dado a 6 facce si simula semplicemente chiamando randint in questo modo:</p>
-<div class="codehilite"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="codehilite"><pre><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
 
 <h3>Esercizio 4</h3>
-<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">fattoriale</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">fattoriale</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">risultato</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>

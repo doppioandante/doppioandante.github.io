@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<meta charset='utf-8'>
+<link rel='stylesheet' type='text/css' href='./codehilite.css'>
+<link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+<body>
+<h2>Soluzioni terza lezione</h2>
+<h3>Esercizio 1</h3>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">vector_length</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="n">squares_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+        <span class="n">squares_sum</span> <span class="o">+=</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">squares_sum</span> <span class="o">**</span> <span class="mf">0.5</span>
+</pre></div>
+
+
+<h3>Esercizio 2</h3>
+<p>La difficoltà centrale dell'esercizio è trovare un modo per ricavare la posizione di un carattere nell'alfabeto:
+mentre di solito si conosce l'indice e si vuole il dato, qua serve il contrario.</p>
+<p>Un modo è modificare la funzione <code>presente</code> nelle slide in modo che invece di dare una informaziona booleana (presente/non presente)
+dia la posizione effettiva.</p>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">find_index</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span> <span class="c1"># tradizionalmente l&#39;elemento da cercare si dice needle (ago) e la lista haystack (pila di paglia)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">elem</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+
+
+<p>È comune usare -1 come risultato nel caso non si trovi l'elemento (poiché non è un indice valido) ma si potrebbe usare allo stesso scopo
+anche</code>, o <code>None</code> o qualsiasi altro valore che non si confonda con un indice (oppure si potrebbe usare un'eccezione, argomento non trattato).</p>
+<p>Una prima soluzione può essere questa:</p>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">find_index</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">elem</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">decodifica</span><span class="p">(</span><span class="n">messaggio</span><span class="p">,</span> <span class="n">alfabeto</span><span class="p">):</span>
+    <span class="n">messaggio_decodificato</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">carattere</span> <span class="ow">in</span> <span class="n">messaggio</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">find_index</span><span class="p">(</span><span class="n">carattere</span><span class="p">,</span> <span class="n">alfabeto</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;a&#39;</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;b&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;c&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;d&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;e&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;f&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;g&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;h&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;i&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;j&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;k&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;l&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;m&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">13</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;n&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">14</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;o&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;p&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;q&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">17</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;r&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;s&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">19</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;t&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;u&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;v&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">22</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;w&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">23</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;x&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">24</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;y&#39;</span> 
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">25</span><span class="p">:</span>
+            <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="s1">&#39;z&#39;</span>
+
+    <span class="k">return</span> <span class="n">messaggio_decodificato</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;segreto.txt&#39;</span><span class="p">)</span>
+<span class="n">testo_criptato</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">alfabeto_casuale</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">decodifica</span><span class="p">(</span><span class="n">testo_criptato</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">alfabeto_casuale</span><span class="p">))</span>
+</pre></div>
+
+
+<p>La soluzione è intuitiva ma molto lunga. Ispirandosi al codice usato per generare l'alfabeto casuale, si possono usare le funzioni builtin <code>ord</code> e <code>chr</code>
+che convertono da carattere a rispettiva codifica ASCII (che è un numero). La 'a' minuscola ha codice ASCII 97, come si può verificare usando ord("a") o chr(97).</p>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">decodifica</span><span class="p">(</span><span class="n">messaggio</span><span class="p">,</span> <span class="n">alfabeto</span><span class="p">):</span>
+    <span class="n">messaggio_decodificato</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">carattere</span> <span class="ow">in</span> <span class="n">messaggio</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">find_index</span><span class="p">(</span><span class="n">carattere</span><span class="p">,</span> <span class="n">alfabeto</span><span class="p">)</span>
+        <span class="n">messaggio_decodificato</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">messaggio_decodificato</span>
+</pre></div>
+
+
+<p>Infine, conoscendo i metodi, si poteva fare a meno della funzione find_index perché le liste hanno un metodo che fa esattamente quello:</p>
+<div class="codehilite"><pre><span class="c1"># prima: i = find_index(carattere, alfabeto)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">alfabeto</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">carattere</span><span class="p">)</span>
+</pre></div>
+
+
+<h3>Esercizio 3</h3>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">vector_length</span><span class="p">(</span><span class="n">vector_difference</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">))</span>
+</pre></div>
+</body>
+</html>

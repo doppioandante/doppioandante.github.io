@@ -12,7 +12,7 @@
 <p>Per saperne di più sull'insieme di Mandelbrot, si può consultare la <a href="https://en.wikipedia.org/wiki/Mandelbrot_set">pagina Wikipedia</a></p>
 <p>Si può scaricare un esempio di programma che genera un frattale di Mandelbrot colorato: <a href="colorful_mandelbrot.py">colorful_mandelbrot.py</a></p>
 <p>Il numero di iterazioni (max_iterations) è stato aumentato a 512 per migliorare la precisione del disegno, a discapito del tempo di esecuzione più lungo.</p>
-<p>Il colore viene calcolato in base a quanti passi servono per capire se appartiene o meno all'insieme di Mandelbrot.</p>
+<p>Il colore viene calcolato in base a quanti passi servono per capire se il punto appartiene o meno all'insieme di Mandelbrot.</p>
 <p>In questo caso si usa un'interpolazione lineare da un colore di partenza blu scuro (rgb: 32, 25, 32) ad arancione (252, 131, 61).</p>
 <p>Nel caso servano pochi passi, il fattore di interpolazione <code>a = passi/max_iterations</code> sarà vicino a 0, e il colore risultante blu scuro: questo
 si vede nei punti lontani dal dominio dell'insieme di Mandelbrot. Vicino al bordo invece servono più passi per capire se il punto è dentro l'insieme
